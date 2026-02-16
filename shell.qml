@@ -53,8 +53,6 @@ PanelWindow {
         visible: false
     }
 
-    // ─────────────────────────────────────────────
-    // IPC handler for external toggle (e.g. Hyprland)
     IpcHandler {
         id: launcherIpc
         target: "launcher"
@@ -62,13 +60,8 @@ PanelWindow {
         function toggle(): void {
             launcher.visible = !launcher.visible
 
-            // focus search if opening
             if (launcher.visible && launcher.search)
                 launcher.search.forceActiveFocus()
         }
     }
-
-	// in shell.qml
-//	StorageService { id: storageService }
-
 }
