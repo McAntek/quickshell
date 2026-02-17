@@ -75,5 +75,12 @@ Rectangle {
 
 		onClicked: showTimeInstead = !showTimeInstead
 	}
+
+	Behavior on implicitWidth {
+		NumberAnimation {
+			duration: 180
+			easing.type: Easing.OutQuad
+		}
+	}
 }
 

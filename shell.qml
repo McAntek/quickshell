@@ -25,6 +25,8 @@ PanelWindow {
     RowLayout {
         spacing: 6
         anchors.left: parent.left
+
+        ProfileComponent{}
     }
 
     // Middle
