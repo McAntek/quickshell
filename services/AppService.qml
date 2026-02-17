@@ -47,7 +47,7 @@ Item {
                     boost: (recents[app.name] || 0) * 10
                 }
             })
-            .filter(o => o.s > 0)   // only real matches survive
+            .filter(o => o.s > 0)
             .map(o => ({
                 app: o.app,
                 s: o.s + o.boost
