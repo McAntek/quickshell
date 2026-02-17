@@ -38,13 +38,23 @@ Item {
 
 
         results = apps
-            .map(app => ({
-                app,
-                s: score(app, query) + (recents[app.name] || 0) * 10
+            .map(app => {
+                const baseScore = score(app, query)
+
+                return {
+                    app,
+                    s: baseScore,
+                    boost: (recents[app.name] || 0) * 10
+                }
+            })
+            .filter(o => o.s > 0)   // only real matches survive
+            .map(o => ({
+                app: o.app,
+                s: o.s + o.boost
             }))
-            .filter(o => o.s > 0)
             .sort((a, b) => b.s - a.s)
             .map(o => o.app)
+
     }
 
     function icon(app) {
