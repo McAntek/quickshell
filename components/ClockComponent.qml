@@ -54,9 +54,9 @@ Rectangle {
 				Qt.formatDateTime(
 					new Date(), "dddd, dd MMMM yyyy")
 
-			tooltip.px = pos.x - tooltip.width / 2
-			tooltip.py = pos.y + tooltip.height / 2 + 8 + RosePine.fontSize
-
+			tooltip.px = pos.x - screen.x - tooltip.width / 2
+			tooltip.py = pos.y - screen.y + tooltip.height / 2 + RosePine.fontSize * 1.5
+			
 			tooltip.visible = true
 		}
 

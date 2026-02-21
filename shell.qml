@@ -55,6 +55,10 @@ PanelWindow {
         visible: false
     }
 
+    VolumeOverlay {
+        
+    }
+
     IpcHandler {
         id: launcherIpc
         target: "launcher"
